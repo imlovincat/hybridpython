@@ -1,0 +1,4382 @@
+<project name="HybridPython" app="Snap! 9.0, https://snap.berkeley.edu" version="2">
+	<notes/>
+	<thumbnail>data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAAB4CAYAAAB1ovlvAAAAAXNSR0IArs4c6QAABHNJREFUeF7t2z8orXEAxvHnDsIgMsgiNjIpi0mKgZCUiAxMyiibgcVsMMokg7CYKdkslH+lDORPLP7EIMLt9+vSvd3Fec+pR73fM5687+N8z6fDOV6/Pj4+PsSNAqYCvwBoKs9sLABAIFgLANCan/EvgNfX13p5edHp6akaGxu1vb2tq6srtba2amNjQ2VlZbq4uFBNTY2qq6s1MDCgpaWlWPD19VUTExPq7u5WRUWF8vPz1dvbq/7+flVVVen9/T2eZ3FxMd63tbWlhoYGHR4eqr6+nmchxQW+AK6trWlzc1PDw8MRYUtLi3Z2dnR+fq6joyONjY2ppKREe3t7Cu9b9vf3NTg4+AVwampK7e3turm5ieAODg40OTmp+fl5FRcXx3OOj49rdXVV5eXlWl9fV0dHBwBTjO+f3wGfnp709vamoqIiTU9Px1e0gOns7EzPz89qamqKqcJ9l5eXuru7U3Nzc7wvgHt8fIzQZmdnNTo6Gl9Bw6vcyclJ/Jr7+/sIr7S0NO7s7u7G+z/Pm/LnIbUP/7/fAcOrYG1tbfyRm+kt/CgOP14/YWZ6PF+fvgK8CUnfc/6jHjEAf9TTkb5vBoDpe85/1CNOBHBhYUEFBQXxI5fwRoMbBZIWSARwZmZGdXV1Cu+cOzs7k25zHAWS/ykufAjd19dHQgpkVSDRK2BWixxMgb8KABAO1gIAtOZnPBHAh4eH+Hfjrq4uClIgqwKJAIbF4+PjeFUMNwpkUyARwHBFzNzcXLy6pbKyMpt9jk15gUQAU96Mh5/DAgDMYUxOlXkBAGbejCNyWACAOYzJqTIvkAhguBp6ZWVFQ0NDysvLy3yVIyjwp8C3Ad7e3sbL6T9v4XNALqfHUbYFvg1weXk5/qdbW1ubenp64n+3FRYWZrvP8Skv8G2A4RUvfPg8MjKS8mQ8/FwW+DbAXI5yLgp8FgAgFqwFAGjNzzgAMWAtAEBrfsYBiAFrAQBa8zMOQAxYCwDQmp9xAGLAWgCA1vyMAxAD1gIAtOZnHIAYsBYAoDU/4wDEgLUAAK35GQcgBqwFAGjNzzgAMWAtAEBrfsYBiAFrAQBa8zMOQAxYCwDQmp9xAGLAWgCA1vyMAxAD1gIAtOZnHIAYsBYAoDU/4wDEgLUAAK35GQcgBqwFAGjNzzgAMWAtAEBrfsYBiAFrAQBa8zMOQAxYCwDQmp9xAGLAWgCA1vyMAxAD1gIAtOZnHIAYsBYAoDU/4wDEgLUAAK35GQcgBqwFAGjNzzgAMWAtAEBrfsYBiAFrAQBa8zMOQAxYCwDQmp9xAGLAWgCA1vyMAxAD1gIAtOZnHIAYsBYAoDU/4wDEgLUAAK35GQcgBqwFAGjNzzgAMWAtAEBrfsYBiAFrAQBa8zMOQAxYCwDQmp9xAGLAWgCA1vyMAxAD1gIAtOZnHIAYsBYAoDU/4wDEgLUAAK35GQcgBqwFAGjNzzgAMWAtAEBrfsYBiAFrAQBa8zMOQAxYCwDQmp9xAGLAWgCA1vyMAxAD1gK/Ad62sLfoUpoAAAAAAElFTkSuQmCC</thumbnail>
+	<scenes select="1">
+		<scene name="HybridPython">
+			<notes/>
+			<hidden> forward turn turnLeft setHeading doFaceTowards gotoXY doGotoObject doGlide changeXPosition setXPosition changeYPosition setYPosition bounceOffEdge getPosition xPosition yPosition direction doSwitchToCostume doWearNextCostume getCostumeIdx doSayFor bubble doThinkFor doThink reportGetImageAttribute reportNewCostumeStretched reportNewCostume changeEffect setEffect clearEffects getEffect changeScale setScale getScale show hide reportShown goToLayer goBack playSound doPlaySoundUntilDone doStopAllSounds doPlaySoundAtRate reportGetSoundAttribute reportNewSoundFromSamples doRest doPlayNote doSetInstrument doChangeTempo doSetTempo getTempo changeVolume setVolume getVolume changePan setPan getPan playFreq stopFreq clear down up getPenDown setColor changePenColorDimension setPenColorDimension getPenAttribute changeSize setSize doStamp floodFill write reportPenTrailsAsCostume doPasteOn doCutFrom receiveGo receiveKey receiveInteraction receiveCondition receiveMessage doBroadcast doBroadcastAndWait doWarp doWait doWaitUntil doForever doRepeat doUntil doFor doIf doIfElse reportIfElse doReport doStopThis doRun fork evaluate reportPipe doTellTo reportAskFor receiveOnClone createClone newClone removeClone doPauseAll doSwitchToScene receiveUserEdit doDefineBlock doDeleteBlock doSetBlockAttribute reportBlockAttribute reportEnvironment reportTouchingObject reportTouchingColor reportColorIsTouchingColor doAsk getLastAnswer reportMousePosition reportMouseX reportMouseY reportMouseDown reportKeyPressed reportRelationTo reportAspect doResetTimer getTimer reportDate reportAttributeOf reportGet reportObject reportURL reportAudio reportVideo doSetVideoTransparency reportGlobalFlag doSetGlobalFlag reifyScript reifyReporter reifyPredicate reportVariadicSum reportDifference reportVariadicProduct reportQuotient reportPower reportModulus reportRound reportMonadic reportRandom reportVariadicLessThan reportVariadicEquals reportVariadicGreaterThan reportVariadicAnd reportVariadicOr reportNot reportBoolean reportJoinWords reportTextSplit reportLetter reportTextAttribute reportUnicode reportUnicodeAsLetter reportIsA reportVariadicIsIdentical reportJSFunction doChangeVar doShowVar doHideVar doDeclareVariables doDeleteAttr reportNewList reportNumbers reportCONS reportListItem reportCDR reportListAttribute reportListIndex reportListContainsItem reportListIsEmpty reportMap reportKeep reportFindFirst reportCombine doForEach doAddToList doDeleteFromList doInsertInList doReplaceInList reportConcatenatedLists reportReshape reportCrossproduct</hidden>
+			<headers/>
+			<code/>
+			<blocks>
+				<block-definition s="run Hybrid Python %&apos;run&apos;" type="command" category="control">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%cs"/>
+					</inputs>
+					<script>
+						<block s="clear"/>
+						<block s="setScale">
+							<l>30</l>
+						</block>
+						<block s="gotoXY">
+							<l>-260</l>
+							<l>180</l>
+						</block>
+						<block s="setColor">
+							<color>0,0,0,1</color>
+						</block>
+						<custom-block s="print ( %s )">
+							<l>Run Hybrid Python:</l>
+							<variables>
+								<variable name="print">
+									<l>-260</l>
+								</variable>
+							</variables>
+						</custom-block>
+						<block s="gotoXY">
+							<l>-200</l>
+							<l>160</l>
+						</block>
+						<block s="doRun">
+							<block var="run"/>
+							<list/>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="print ( %&apos;input&apos; )" type="command" category="control">
+					<variables>
+						<list struct="atomic" id="25">print</list>
+					</variables>
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%s">Hello World!</input>
+					</inputs>
+					<script>
+						<block s="changeYPosition">
+							<l>-20</l>
+						</block>
+						<block s="doSetVar">
+							<l>print</l>
+							<block s="xPosition"/>
+						</block>
+						<block s="doIfElse">
+							<block s="reportIsA">
+								<block var="input"/>
+								<l>
+									<option>list</option>
+								</l>
+							</block>
+							<script>
+								<block s="doForEach">
+									<l>item</l>
+									<block var="input"/>
+									<script>
+										<block s="write">
+											<block var="item"/>
+											<l>12</l>
+										</block>
+										<block s="setXPosition">
+											<block var="print"/>
+										</block>
+										<block s="doWait">
+											<l>0.3</l>
+										</block>
+										<block s="changeYPosition">
+											<l>-20</l>
+										</block>
+									</script>
+								</block>
+							</script>
+							<script>
+								<custom-block s="if %b : %cs else: %cs">
+									<block s="reportIsA">
+										<block var="input"/>
+										<l>
+											<option>Boolean</option>
+										</l>
+									</block>
+									<script>
+										<custom-block s="if %b : %cs else: %cs">
+											<block s="reportVariadicEquals">
+												<list>
+													<block var="input"/>
+													<block s="reportBoolean">
+														<l>
+															<bool>true</bool>
+														</l>
+													</block>
+												</list>
+											</block>
+											<script>
+												<block s="write">
+													<l>True</l>
+													<l>12</l>
+												</block>
+											</script>
+											<script>
+												<block s="write">
+													<l>False</l>
+													<l>12</l>
+												</block>
+											</script>
+										</custom-block>
+									</script>
+									<script>
+										<block s="doIfElse">
+											<block s="reportVariadicOr">
+												<list>
+													<block s="reportIsA">
+														<block var="input"/>
+														<l>
+															<option>text</option>
+														</l>
+													</block>
+													<block s="reportIsA">
+														<block var="input"/>
+														<l>
+															<option>number</option>
+														</l>
+													</block>
+												</list>
+											</block>
+											<script>
+												<block s="write">
+													<block var="input"/>
+													<l>12</l>
+												</block>
+											</script>
+											<script>
+												<block s="write">
+													<l>Type Error: invalid input</l>
+													<l>12</l>
+												</block>
+												<block s="doStopThis">
+													<l>
+														<option>all</option>
+													</l>
+												</block>
+											</script>
+										</block>
+									</script>
+								</custom-block>
+							</script>
+						</block>
+						<block s="setXPosition">
+							<block var="print"/>
+						</block>
+						<block s="doWait">
+							<l>0.3</l>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="for %&apos;let&apos; in %&apos;num&apos; %&apos;i&apos; %&apos;run&apos;" type="command" category="control">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%txt">i</input>
+						<input type="%n">10</input>
+						<input type="%upvar"/>
+						<input type="%cs"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>i</l>
+							<l>1</l>
+						</block>
+						<block s="doRepeat">
+							<block s="reportMonadic">
+								<l>
+									<option>floor</option>
+								</l>
+								<block s="reportQuotient">
+									<block var="num"/>
+									<block var="let"/>
+								</block>
+							</block>
+							<script>
+								<block s="doRun">
+									<block var="run"/>
+									<list/>
+								</block>
+								<block s="doChangeVar">
+									<l>i</l>
+									<l>1</l>
+								</block>
+							</script>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="for %&apos;i&apos; in %&apos;list&apos; : %&apos;run&apos;" type="command" category="control">
+					<variables>
+						<list struct="atomic" id="136">index</list>
+					</variables>
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%upvar"/>
+						<input type="%l"/>
+						<input type="%cs"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>index</l>
+							<l>1</l>
+						</block>
+						<block s="doRepeat">
+							<block s="reportListAttribute">
+								<l>
+									<option>length</option>
+								</l>
+								<block var="list"/>
+							</block>
+							<script>
+								<block s="doSetVar">
+									<l>i</l>
+									<block s="reportListItem">
+										<block var="index"/>
+										<block var="list"/>
+									</block>
+								</block>
+								<block s="doRun">
+									<block var="run"/>
+									<list/>
+								</block>
+								<block s="doChangeVar">
+									<l>index</l>
+									<l>1</l>
+								</block>
+							</script>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="range( %&apos;n&apos; )" type="reporter" category="variables">
+					<variables>
+						<list struct="atomic" id="162">result,count</list>
+					</variables>
+					<header/>
+					<code>range(&lt;#1&gt;)</code>
+					<translations/>
+					<inputs>
+						<input type="%n"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>result</l>
+							<block s="reportNewList">
+								<list/>
+							</block>
+						</block>
+						<block s="doSetVar">
+							<l>count</l>
+							<l>0</l>
+						</block>
+						<block s="doRepeat">
+							<block var="n"/>
+							<script>
+								<block s="doAddToList">
+									<block var="count"/>
+									<block var="result"/>
+								</block>
+								<block s="doChangeVar">
+									<l>count</l>
+									<l>1</l>
+								</block>
+							</script>
+						</block>
+						<block s="doReport">
+							<block var="result"/>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="if %&apos;statement&apos; : %&apos;run1&apos; else: %&apos;run2&apos;" type="command" category="control">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%b"/>
+						<input type="%cs"/>
+						<input type="%cs"/>
+					</inputs>
+					<script>
+						<block s="doIfElse">
+							<block var="statement"/>
+							<script>
+								<block s="doRun">
+									<block var="run1"/>
+									<list/>
+								</block>
+							</script>
+							<script>
+								<block s="doRun">
+									<block var="run2"/>
+									<list/>
+								</block>
+							</script>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="True" type="predicate" category="operators">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs/>
+					<script>
+						<block s="doReport">
+							<block s="reportBoolean">
+								<l>
+									<bool>true</bool>
+								</l>
+							</block>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="False" type="predicate" category="operators">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs/>
+					<script>
+						<block s="doReport">
+							<block s="reportBoolean">
+								<l>
+									<bool>false</bool>
+								</l>
+							</block>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="if %&apos;predicate&apos; : %&apos;run1&apos;" type="command" category="control">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%b"/>
+						<input type="%cs"/>
+					</inputs>
+					<script>
+						<block s="doIf">
+							<block var="predicate"/>
+							<script>
+								<block s="doRun">
+									<block var="run1"/>
+									<list/>
+								</block>
+							</script>
+							<list/>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;x&apos; = %&apos;value&apos;" type="command" category="variables">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%upvar"/>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>x</l>
+							<block var="value"/>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="while %&apos;Condition&apos; : %&apos;Block&apos;" type="command" category="control">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%predRing"/>
+						<input type="%cs"/>
+					</inputs>
+					<script>
+						<block s="doIf">
+							<block s="evaluate">
+								<block var="Condition"/>
+								<list/>
+							</block>
+							<script>
+								<block s="doRun">
+									<block var="Block"/>
+									<list/>
+								</block>
+								<custom-block s="while %predRing : %cs">
+									<block var="Condition"/>
+									<block var="Block"/>
+								</custom-block>
+							</script>
+							<list/>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;a&apos; % %&apos;b&apos;" type="reporter" category="operators">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%n"/>
+						<input type="%n"/>
+					</inputs>
+					<script>
+						<block s="doReport">
+							<block s="reportModulus">
+								<block var="a"/>
+								<block var="b"/>
+							</block>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;a&apos; ** %&apos;b&apos;" type="reporter" category="operators">
+					<variables>
+						<list struct="atomic" id="257">c</list>
+					</variables>
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%n"/>
+						<input type="%n"/>
+					</inputs>
+					<script>
+						<block s="doIfElse">
+							<block s="reportVariadicLessThan">
+								<list>
+									<block var="b"/>
+									<l>0</l>
+								</list>
+							</block>
+							<script>
+								<block s="doSetVar">
+									<l>c</l>
+									<l>Exponent cannot be negative.</l>
+								</block>
+							</script>
+							<script>
+								<block s="doSetVar">
+									<l>c</l>
+									<l>1</l>
+								</block>
+								<block s="doFor">
+									<l>i</l>
+									<l>1</l>
+									<block var="b"/>
+									<script>
+										<block s="doSetVar">
+											<l>c</l>
+											<block s="reportVariadicProduct">
+												<list>
+													<block var="c"/>
+													<block var="a"/>
+												</list>
+											</block>
+										</block>
+									</script>
+								</block>
+							</script>
+						</block>
+						<block s="doReport">
+							<block var="c"/>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="pow ( %&apos;base&apos; , %&apos;exponent&apos;" type="reporter" category="operators">
+					<variables>
+						<list struct="atomic" id="293">result</list>
+					</variables>
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%n"/>
+						<input type="%n"/>
+					</inputs>
+					<script>
+						<block s="doIfElse">
+							<block s="reportVariadicLessThan">
+								<list>
+									<block var="exponent"/>
+									<l>0</l>
+								</list>
+							</block>
+							<script>
+								<block s="doSetVar">
+									<l>result</l>
+									<l>Exponent cannot be negative.</l>
+								</block>
+							</script>
+							<script>
+								<block s="doSetVar">
+									<l>result</l>
+									<l>1</l>
+								</block>
+								<block s="doFor">
+									<l>i</l>
+									<l>1</l>
+									<block var="exponent"/>
+									<script>
+										<block s="doSetVar">
+											<l>result</l>
+											<block s="reportVariadicProduct">
+												<list>
+													<block var="result"/>
+													<block var="base"/>
+												</list>
+											</block>
+										</block>
+									</script>
+								</block>
+							</script>
+						</block>
+						<block s="doReport">
+							<block var="result"/>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;dividend&apos; // %&apos;divisor&apos;" type="reporter" category="operators">
+					<variables>
+						<list struct="atomic" id="329">result</list>
+					</variables>
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%n"/>
+						<input type="%n"/>
+					</inputs>
+					<script>
+						<block s="doIfElse">
+							<block s="reportVariadicEquals">
+								<list>
+									<block var="divisor"/>
+									<l>0</l>
+								</list>
+							</block>
+							<script>
+								<block s="doSetVar">
+									<l>result</l>
+									<l>Division by zero is not allowed.</l>
+								</block>
+							</script>
+							<script>
+								<block s="doSetVar">
+									<l>result</l>
+									<block s="reportRound">
+										<block s="reportQuotient">
+											<block var="dividend"/>
+											<block var="divisor"/>
+										</block>
+									</block>
+								</block>
+								<block s="doIf">
+									<block s="reportVariadicAnd">
+										<list>
+											<block s="reportNot">
+												<block s="reportVariadicEquals">
+													<list>
+														<block s="reportVariadicLessThan">
+															<list>
+																<block var="dividend"/>
+																<l>0</l>
+															</list>
+														</block>
+														<block s="reportVariadicLessThan">
+															<list>
+																<block var="divisor"/>
+																<l>0</l>
+															</list>
+														</block>
+													</list>
+												</block>
+											</block>
+											<block s="reportNot">
+												<block s="reportVariadicEquals">
+													<list>
+														<block s="reportModulus">
+															<block var="dividend"/>
+															<block var="divisor"/>
+														</block>
+														<l>0</l>
+													</list>
+												</block>
+											</block>
+										</list>
+									</block>
+									<script>
+										<block s="doSetVar">
+											<l>result</l>
+											<block s="reportDifference">
+												<block var="result"/>
+												<l>1</l>
+											</block>
+										</block>
+									</script>
+									<list/>
+								</block>
+							</script>
+						</block>
+						<block s="doReport">
+							<block var="result"/>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;a&apos; == %&apos;b&apos;" type="predicate" category="operators">
+					<variables>
+						<list struct="atomic" id="400">c</list>
+					</variables>
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%n"/>
+						<input type="%n"/>
+					</inputs>
+					<script>
+						<block s="doIfElse">
+							<block s="reportVariadicEquals">
+								<list>
+									<block var="a"/>
+									<block var="b"/>
+								</list>
+							</block>
+							<script>
+								<block s="doSetVar">
+									<l>c</l>
+									<block s="reportBoolean">
+										<l>
+											<bool>true</bool>
+										</l>
+									</block>
+								</block>
+								<block s="doReport">
+									<block var="c"/>
+								</block>
+							</script>
+							<script>
+								<block s="doSetVar">
+									<l>c</l>
+									<block s="reportBoolean">
+										<l>
+											<bool>false</bool>
+										</l>
+									</block>
+								</block>
+								<block s="doReport">
+									<block var="c"/>
+								</block>
+							</script>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;a&apos; != %&apos;b&apos;" type="predicate" category="operators">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%n"/>
+						<input type="%n"/>
+					</inputs>
+					<script>
+						<block s="doIfElse">
+							<block s="reportVariadicEquals">
+								<list>
+									<block var="a"/>
+									<block var="b"/>
+								</list>
+							</block>
+							<script>
+								<block s="doReport">
+									<block s="reportBoolean">
+										<l>
+											<bool>false</bool>
+										</l>
+									</block>
+								</block>
+							</script>
+							<script>
+								<block s="doReport">
+									<block s="reportBoolean">
+										<l>
+											<bool>true</bool>
+										</l>
+									</block>
+								</block>
+							</script>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;a&apos; &gt;= %&apos;b&apos;" type="predicate" category="operators">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%n"/>
+						<input type="%n"/>
+					</inputs>
+					<script>
+						<block s="doIfElse">
+							<block s="reportVariadicOr">
+								<list>
+									<block s="reportVariadicGreaterThan">
+										<list>
+											<block var="a"/>
+											<block var="b"/>
+										</list>
+									</block>
+									<block s="reportVariadicEquals">
+										<list>
+											<block var="a"/>
+											<block var="b"/>
+										</list>
+									</block>
+								</list>
+							</block>
+							<script>
+								<block s="doReport">
+									<block s="reportBoolean">
+										<l>
+											<bool>true</bool>
+										</l>
+									</block>
+								</block>
+							</script>
+							<script>
+								<block s="doReport">
+									<block s="reportBoolean">
+										<l>
+											<bool>false</bool>
+										</l>
+									</block>
+								</block>
+							</script>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;a&apos; &lt;= %&apos;b&apos;" type="predicate" category="operators">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%n"/>
+						<input type="%n"/>
+					</inputs>
+					<script>
+						<block s="doIfElse">
+							<block s="reportVariadicOr">
+								<list>
+									<block s="reportVariadicLessThan">
+										<list>
+											<block var="a"/>
+											<block var="b"/>
+										</list>
+									</block>
+									<block s="reportVariadicEquals">
+										<list>
+											<block var="a"/>
+											<block var="b"/>
+										</list>
+									</block>
+								</list>
+							</block>
+							<script>
+								<block s="doReport">
+									<block s="reportBoolean">
+										<l>
+											<bool>true</bool>
+										</l>
+									</block>
+								</block>
+							</script>
+							<script>
+								<block s="doReport">
+									<block s="reportBoolean">
+										<l>
+											<bool>false</bool>
+										</l>
+									</block>
+								</block>
+							</script>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="not ( %&apos;predicate&apos; )" type="predicate" category="operators">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%b"/>
+					</inputs>
+					<script>
+						<block s="doReport">
+							<block s="reportNot">
+								<block var="predicate"/>
+							</block>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="print ( %&apos;input&apos; ) (2)" type="command" category="control">
+					<variables>
+						<list struct="atomic" id="517">print</list>
+					</variables>
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%s">Hello World!</input>
+					</inputs>
+					<script>
+						<block s="changeYPosition">
+							<l>-20</l>
+						</block>
+						<block s="doSetVar">
+							<l>print</l>
+							<block s="xPosition"/>
+						</block>
+						<block s="write">
+							<block var="input"/>
+							<l>12</l>
+						</block>
+						<block s="setXPosition">
+							<block var="print"/>
+						</block>
+						<block s="doWait">
+							<l>0.3</l>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;a&apos; is %&apos;b&apos;" type="predicate" category="operators">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%s"/>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="doReport">
+							<block s="reportVariadicEquals">
+								<list>
+									<block var="a"/>
+									<block var="b"/>
+								</list>
+							</block>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;a&apos; is not %&apos;b&apos;" type="predicate" category="operators">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%s"/>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="doReport">
+							<block s="reportNot">
+								<block s="reportVariadicEquals">
+									<list>
+										<block var="a"/>
+										<block var="b"/>
+									</list>
+								</block>
+							</block>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;target&apos; in %&apos;array&apos;" type="predicate" category="operators">
+					<variables>
+						<list struct="atomic" id="553">predicate</list>
+					</variables>
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%s"/>
+						<input type="%l"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>predicate</l>
+							<block s="reportBoolean">
+								<l>
+									<bool>false</bool>
+								</l>
+							</block>
+						</block>
+						<block s="doForEach">
+							<l>item</l>
+							<block var="array"/>
+							<script>
+								<block s="doIf">
+									<block s="reportVariadicEquals">
+										<list>
+											<block var="item"/>
+											<block var="target"/>
+										</list>
+									</block>
+									<script>
+										<block s="doSetVar">
+											<l>predicate</l>
+											<block s="reportBoolean">
+												<l>
+													<bool>true</bool>
+												</l>
+											</block>
+										</block>
+									</script>
+									<list/>
+								</block>
+							</script>
+						</block>
+						<block s="doReport">
+							<block var="predicate"/>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;target&apos; not in %&apos;array&apos;" type="predicate" category="operators">
+					<variables>
+						<list struct="atomic" id="584">predicate</list>
+					</variables>
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%s"/>
+						<input type="%l"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>predicate</l>
+							<block s="reportBoolean">
+								<l>
+									<bool>true</bool>
+								</l>
+							</block>
+						</block>
+						<block s="doForEach">
+							<l>item</l>
+							<block var="array"/>
+							<script>
+								<block s="doIf">
+									<block s="reportVariadicEquals">
+										<list>
+											<block var="item"/>
+											<block var="target"/>
+										</list>
+									</block>
+									<script>
+										<block s="doSetVar">
+											<l>predicate</l>
+											<block s="reportBoolean">
+												<l>
+													<bool>false</bool>
+												</l>
+											</block>
+										</block>
+									</script>
+									<list/>
+								</block>
+							</script>
+						</block>
+						<block s="doReport">
+							<block var="predicate"/>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;x&apos; + %&apos;y&apos;" type="reporter" category="operators">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%n"/>
+						<input type="%n"/>
+					</inputs>
+					<script>
+						<block s="doIfElse">
+							<block s="reportVariadicAnd">
+								<list>
+									<block s="reportIsA">
+										<block var="x"/>
+										<l>
+											<option>number</option>
+										</l>
+									</block>
+									<block s="reportIsA">
+										<block var="y"/>
+										<l>
+											<option>number</option>
+										</l>
+									</block>
+								</list>
+							</block>
+							<script>
+								<block s="doReport">
+									<block s="reportVariadicSum">
+										<list>
+											<block var="x"/>
+											<block var="y"/>
+										</list>
+									</block>
+								</block>
+							</script>
+							<script>
+								<custom-block s="print ( %s )">
+									<l>TypeError: unsupported operand type</l>
+									<variables>
+										<variable name="print">
+											<l>-200.00000000000003</l>
+										</variable>
+									</variables>
+								</custom-block>
+							</script>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;x&apos; - %&apos;y&apos;" type="reporter" category="operators">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%n"/>
+						<input type="%n"/>
+					</inputs>
+					<script>
+						<block s="doReport">
+							<block s="reportDifference">
+								<block var="x"/>
+								<block var="y"/>
+							</block>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;x&apos; * %&apos;y&apos;" type="reporter" category="operators">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%n"/>
+						<input type="%n"/>
+					</inputs>
+					<script>
+						<block s="doReport">
+							<block s="reportVariadicProduct">
+								<list>
+									<block var="x"/>
+									<block var="y"/>
+								</list>
+							</block>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;x&apos; / %&apos;y&apos;" type="reporter" category="operators">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%n"/>
+						<input type="%n"/>
+					</inputs>
+					<script>
+						<block s="doReport">
+							<block s="reportQuotient">
+								<block var="x"/>
+								<block var="y"/>
+							</block>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="int( %&apos;integar&apos; )" type="reporter" category="operators">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="doIfElse">
+							<block s="reportIsA">
+								<block var="integar"/>
+								<l>
+									<option>number</option>
+								</l>
+							</block>
+							<script>
+								<block s="doReport">
+									<block var="integar"/>
+								</block>
+							</script>
+							<script>
+								<custom-block s="print ( %s )">
+									<l>ValueError: invalid literal for int() with base 10</l>
+									<variables>
+										<variable name="print">
+											<l>-200</l>
+										</variable>
+									</variables>
+								</custom-block>
+								<block s="doStopThis">
+									<l>
+										<option>all</option>
+									</l>
+								</block>
+							</script>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;a&apos; &gt; %&apos;b&apos;" type="predicate" category="operators">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%n"/>
+						<input type="%n"/>
+					</inputs>
+					<script>
+						<block s="doIfElse">
+							<block s="reportVariadicGreaterThan">
+								<list>
+									<block var="a"/>
+									<block var="b"/>
+								</list>
+							</block>
+							<script>
+								<block s="doReport">
+									<block s="reportBoolean">
+										<l>
+											<bool>true</bool>
+										</l>
+									</block>
+								</block>
+							</script>
+							<script>
+								<block s="doReport">
+									<block s="reportBoolean">
+										<l>
+											<bool>false</bool>
+										</l>
+									</block>
+								</block>
+							</script>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;a&apos; &lt; %&apos;b&apos;" type="predicate" category="operators">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%n"/>
+						<input type="%n"/>
+					</inputs>
+					<script>
+						<block s="doIfElse">
+							<block s="reportVariadicLessThan">
+								<list>
+									<block var="a"/>
+									<block var="b"/>
+								</list>
+							</block>
+							<script>
+								<block s="doReport">
+									<block s="reportBoolean">
+										<l>
+											<bool>true</bool>
+										</l>
+									</block>
+								</block>
+							</script>
+							<script>
+								<block s="doReport">
+									<block s="reportBoolean">
+										<l>
+											<bool>false</bool>
+										</l>
+									</block>
+								</block>
+							</script>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;a&apos; and %&apos;b&apos;" type="predicate" category="operators">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%b"/>
+						<input type="%b"/>
+					</inputs>
+					<script>
+						<block s="doIfElse">
+							<block s="reportVariadicAnd">
+								<list>
+									<block var="a"/>
+									<block var="b"/>
+								</list>
+							</block>
+							<script>
+								<block s="doReport">
+									<block s="reportBoolean">
+										<l>
+											<bool>true</bool>
+										</l>
+									</block>
+								</block>
+							</script>
+							<script>
+								<block s="doReport">
+									<block s="reportBoolean">
+										<l>
+											<bool>false</bool>
+										</l>
+									</block>
+								</block>
+							</script>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;a&apos; or %&apos;b&apos;" type="predicate" category="operators">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%b"/>
+						<input type="%b"/>
+					</inputs>
+					<script>
+						<block s="doIfElse">
+							<block s="reportVariadicOr">
+								<list>
+									<block var="a"/>
+									<block var="b"/>
+								</list>
+							</block>
+							<script>
+								<block s="doReport">
+									<block s="reportBoolean">
+										<l>
+											<bool>true</bool>
+										</l>
+									</block>
+								</block>
+							</script>
+							<script>
+								<block s="doReport">
+									<block s="reportBoolean">
+										<l>
+											<bool>false</bool>
+										</l>
+									</block>
+								</block>
+							</script>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="pow ( %&apos;base&apos; , %&apos;exponent&apos; , %&apos;modulus&apos; )" type="reporter" category="operators">
+					<variables>
+						<list struct="atomic" id="767">result</list>
+					</variables>
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%n"/>
+						<input type="%n"/>
+						<input type="%n"/>
+					</inputs>
+					<script>
+						<block s="doIfElse">
+							<block s="reportVariadicLessThan">
+								<list>
+									<block var="exponent"/>
+									<l>0</l>
+								</list>
+							</block>
+							<script>
+								<block s="doSetVar">
+									<l>result</l>
+									<l>Exponent cannot be negative.</l>
+								</block>
+							</script>
+							<script>
+								<block s="doSetVar">
+									<l>result</l>
+									<l>1</l>
+								</block>
+								<block s="doFor">
+									<l>i</l>
+									<l>1</l>
+									<block var="exponent"/>
+									<script>
+										<block s="doSetVar">
+											<l>result</l>
+											<block s="reportVariadicProduct">
+												<list>
+													<block var="result"/>
+													<block var="base"/>
+												</list>
+											</block>
+										</block>
+									</script>
+								</block>
+							</script>
+						</block>
+						<block s="doReport">
+							<custom-block s="%n % %n">
+								<block var="result"/>
+								<block var="modulus"/>
+							</custom-block>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;x&apos; , %&apos;y&apos; = [ %&apos;item1&apos; , %&apos;item2&apos; ]" type="command" category="variables">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%upvar"/>
+						<input type="%upvar"/>
+						<input type="%s"/>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>x</l>
+							<block var="item1"/>
+						</block>
+						<block s="doSetVar">
+							<l>y</l>
+							<block var="item2"/>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;x&apos; , %&apos;y&apos; , %&apos;z&apos; = [ %&apos;item1&apos; , %&apos;item2&apos; , %&apos;item3&apos; ]" type="command" category="variables">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%upvar"/>
+						<input type="%upvar"/>
+						<input type="%upvar"/>
+						<input type="%s"/>
+						<input type="%s"/>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>x</l>
+							<block var="item1"/>
+						</block>
+						<block s="doSetVar">
+							<l>y</l>
+							<block var="item2"/>
+						</block>
+						<block s="doSetVar">
+							<l>z</l>
+							<block var="item3"/>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;x&apos; = ( %&apos;item1&apos; , %&apos;item2&apos; )" type="command" category="variables">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%upvar"/>
+						<input type="%s"/>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>x</l>
+							<block s="reportNewList">
+								<list>
+									<block var="item1"/>
+									<block var="item2"/>
+								</list>
+							</block>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;x&apos; = ( %&apos;item1&apos; , %&apos;item2&apos; , %&apos;item3&apos; )" type="command" category="variables">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%upvar"/>
+						<input type="%s"/>
+						<input type="%s"/>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>x</l>
+							<block s="reportNewList">
+								<list>
+									<block var="item1"/>
+									<block var="item2"/>
+									<block var="item3"/>
+								</list>
+							</block>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;x&apos; = ( %&apos;item1&apos; , %&apos;item2&apos; , %&apos;item3&apos; , %&apos;item4&apos; )" type="command" category="variables">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%upvar"/>
+						<input type="%s"/>
+						<input type="%s"/>
+						<input type="%s"/>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>x</l>
+							<block s="reportNewList">
+								<list>
+									<block var="item1"/>
+									<block var="item2"/>
+									<block var="item3"/>
+									<block var="item4"/>
+								</list>
+							</block>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;x&apos; = ( %&apos;item1&apos; , %&apos;item2&apos; , %&apos;item3&apos; , %&apos;item4&apos; , %&apos;item5&apos; )" type="command" category="variables">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%upvar"/>
+						<input type="%s"/>
+						<input type="%s"/>
+						<input type="%s"/>
+						<input type="%s"/>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>x</l>
+							<block s="reportNewList">
+								<list>
+									<block var="item1"/>
+									<block var="item2"/>
+									<block var="item3"/>
+									<block var="item4"/>
+									<block var="item5"/>
+								</list>
+							</block>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;x&apos; = ( %&apos;item1&apos; , %&apos;item2&apos; , %&apos;item3&apos; , %&apos;item4&apos; , %&apos;item5&apos; , %&apos;item6&apos; )" type="command" category="variables">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%upvar"/>
+						<input type="%s"/>
+						<input type="%s"/>
+						<input type="%s"/>
+						<input type="%s"/>
+						<input type="%s"/>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>x</l>
+							<block s="reportNewList">
+								<list>
+									<block var="item1"/>
+									<block var="item2"/>
+									<block var="item3"/>
+									<block var="item4"/>
+									<block var="item5"/>
+									<block var="item6"/>
+								</list>
+							</block>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;x&apos; = [ %&apos;item1&apos; , %&apos;item2&apos; ]" type="command" category="variables">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%upvar"/>
+						<input type="%s"/>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>x</l>
+							<block s="reportNewList">
+								<list>
+									<block var="item1"/>
+									<block var="item2"/>
+								</list>
+							</block>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;x&apos; = [ %&apos;item1&apos; , %&apos;item2&apos; , %&apos;item3&apos; ]" type="command" category="variables">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%upvar"/>
+						<input type="%s"/>
+						<input type="%s"/>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>x</l>
+							<block s="reportNewList">
+								<list>
+									<block var="item1"/>
+									<block var="item2"/>
+									<block var="item3"/>
+								</list>
+							</block>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;x&apos; = [ %&apos;item1&apos; , %&apos;item2&apos; , %&apos;item3&apos; , %&apos;item4&apos; ]" type="command" category="variables">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%upvar"/>
+						<input type="%s"/>
+						<input type="%s"/>
+						<input type="%s"/>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>x</l>
+							<block s="reportNewList">
+								<list>
+									<block var="item1"/>
+									<block var="item2"/>
+									<block var="item3"/>
+									<block var="item4"/>
+								</list>
+							</block>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;x&apos; = [ %&apos;item1&apos; , %&apos;item2&apos; , %&apos;item3&apos; , %&apos;item4&apos; , %&apos;item5&apos; ]" type="command" category="variables">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%upvar"/>
+						<input type="%s"/>
+						<input type="%s"/>
+						<input type="%s"/>
+						<input type="%s"/>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>x</l>
+							<block s="reportNewList">
+								<list>
+									<block var="item1"/>
+									<block var="item2"/>
+									<block var="item3"/>
+									<block var="item4"/>
+									<block var="item5"/>
+								</list>
+							</block>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;x&apos; = [ %&apos;item1&apos; , %&apos;item2&apos; , %&apos;item3&apos; , %&apos;item4&apos; , %&apos;item5&apos; , %&apos;item6&apos; ]" type="command" category="variables">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%upvar"/>
+						<input type="%s"/>
+						<input type="%s"/>
+						<input type="%s"/>
+						<input type="%s"/>
+						<input type="%s"/>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>x</l>
+							<block s="reportNewList">
+								<list>
+									<block var="item1"/>
+									<block var="item2"/>
+									<block var="item3"/>
+									<block var="item4"/>
+									<block var="item5"/>
+									<block var="item6"/>
+								</list>
+							</block>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;list&apos; [ %&apos;index&apos; ]" type="reporter" category="variables">
+					<variables>
+						<list struct="atomic" id="945">count</list>
+					</variables>
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%s"/>
+						<input type="%n"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>count</l>
+							<l>0</l>
+						</block>
+						<custom-block s="for %upvar in %l : %cs">
+							<l>i</l>
+							<block var="list"/>
+							<script>
+								<custom-block s="if %b : %cs">
+									<block s="reportVariadicEquals">
+										<list>
+											<block var="count"/>
+											<block var="index"/>
+										</list>
+									</block>
+									<script>
+										<block s="doReport">
+											<block var="i"/>
+										</block>
+									</script>
+								</custom-block>
+								<block s="doSetVar">
+									<l>count</l>
+									<block s="reportVariadicSum">
+										<list>
+											<block var="count"/>
+											<l>1</l>
+										</list>
+									</block>
+								</block>
+							</script>
+							<variables>
+								<variable name="index">
+									<l>7</l>
+								</variable>
+							</variables>
+						</custom-block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;x&apos; = [ ]" type="command" category="variables">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%upvar"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>x</l>
+							<l/>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;list&apos; [ %&apos;index&apos; ] = %&apos;item&apos;" type="command" category="variables">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%s"/>
+						<input type="%n"/>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="doReplaceInList">
+							<block var="index"/>
+							<block var="list"/>
+							<block var="item"/>
+						</block>
+					</script>
+					<scripts>
+						<script x="321.5" y="390.5000000000004">
+							<custom-block s="for %upvar in %l : %cs">
+								<l>i</l>
+								<block var="list"/>
+								<script>
+									<custom-block s="if %b : %cs">
+										<block s="reportVariadicEquals">
+											<list>
+												<block var="count"/>
+												<block var="index"/>
+											</list>
+										</block>
+										<script>
+											<block s="doSetVar">
+												<l>target</l>
+												<block var="i"/>
+											</block>
+										</script>
+									</custom-block>
+									<block s="doSetVar">
+										<l>count</l>
+										<block s="reportVariadicSum">
+											<list>
+												<block var="count"/>
+												<l>1</l>
+											</list>
+										</block>
+									</block>
+								</script>
+								<variables>
+									<variable name="index">
+										<l>0</l>
+									</variable>
+								</variables>
+							</custom-block>
+						</script>
+					</scripts>
+				</block-definition>
+				<block-definition s="len( %&apos;list&apos; )" type="reporter" category="operators">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="doReport">
+							<block s="reportListAttribute">
+								<l>
+									<option>length</option>
+								</l>
+								<block var="list"/>
+							</block>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;list&apos; .append( %&apos;item&apos; )" type="command" category="variables">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%s"/>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="doIfElse">
+							<custom-block s="%b and %b">
+								<block s="reportIsA">
+									<block var="list"/>
+									<l>
+										<option>list</option>
+									</l>
+								</block>
+								<block s="reportVariadicOr">
+									<list>
+										<block s="reportIsA">
+											<block var="item"/>
+											<l>
+												<option>number</option>
+											</l>
+										</block>
+										<block s="reportIsA">
+											<block var="item"/>
+											<l>
+												<option>text</option>
+											</l>
+										</block>
+									</list>
+								</block>
+							</custom-block>
+							<script>
+								<block s="doAddToList">
+									<block var="item"/>
+									<block var="list"/>
+								</block>
+							</script>
+							<script>
+								<custom-block s="print ( %s )">
+									<l>TypeError: object is not subscriptable</l>
+									<variables>
+										<variable name="print">
+											<l>0</l>
+										</variable>
+									</variables>
+								</custom-block>
+								<block s="doStopThis">
+									<l>
+										<option>all</option>
+									</l>
+								</block>
+							</script>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;list&apos; .insert( %&apos;index&apos; , %&apos;item&apos; )" type="command" category="variables">
+					<variables>
+						<list struct="atomic" id="1050">realIndex</list>
+					</variables>
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%s"/>
+						<input type="%n"/>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>realIndex</l>
+							<block s="reportVariadicSum">
+								<list>
+									<block var="index"/>
+									<l>1</l>
+								</list>
+							</block>
+						</block>
+						<block s="doIfElse">
+							<block s="reportIsA">
+								<block var="list"/>
+								<l>
+									<option>list</option>
+								</l>
+							</block>
+							<script>
+								<block s="doIfElse">
+									<custom-block s="%b and %b">
+										<custom-block s="%n &lt; %n">
+											<block var="index"/>
+											<custom-block s="len( %s )">
+												<block var="list"/>
+											</custom-block>
+										</custom-block>
+										<custom-block s="%n &gt;= %n">
+											<block var="index"/>
+											<l>0</l>
+										</custom-block>
+									</custom-block>
+									<script>
+										<block s="doInsertInList">
+											<block var="item"/>
+											<block var="realIndex"/>
+											<block var="list"/>
+										</block>
+									</script>
+									<script>
+										<custom-block s="print ( %s )">
+											<l>TypeError: list index out of range</l>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+										<block s="doStopThis">
+											<l>
+												<option>all</option>
+											</l>
+										</block>
+									</script>
+								</block>
+							</script>
+							<script>
+								<custom-block s="print ( %s )">
+									<l>TypeError: object is not subscriptable</l>
+									<variables>
+										<variable name="print">
+											<l>0</l>
+										</variable>
+									</variables>
+								</custom-block>
+								<block s="doStopThis">
+									<l>
+										<option>all</option>
+									</l>
+								</block>
+							</script>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="print ( %&apos;input&apos; ) (3)" type="command" category="control">
+					<variables>
+						<list struct="atomic" id="1099">print</list>
+					</variables>
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%s">Hello World!</input>
+					</inputs>
+					<script>
+						<block s="changeYPosition">
+							<l>-20</l>
+						</block>
+						<block s="doSetVar">
+							<l>print</l>
+							<block s="xPosition"/>
+						</block>
+						<block s="doIfElse">
+							<block s="reportIsA">
+								<block var="input"/>
+								<l>
+									<option>list</option>
+								</l>
+							</block>
+							<script>
+								<block s="doForEach">
+									<l>item</l>
+									<block var="input"/>
+									<script>
+										<block s="write">
+											<block var="item"/>
+											<l>12</l>
+										</block>
+										<block s="setXPosition">
+											<block var="print"/>
+										</block>
+										<block s="doWait">
+											<l>0.3</l>
+										</block>
+										<block s="changeYPosition">
+											<l>-20</l>
+										</block>
+									</script>
+								</block>
+							</script>
+							<script>
+								<custom-block s="if %b : %cs else: %cs">
+									<block s="reportIsA">
+										<block var="input"/>
+										<l>
+											<option>Boolean</option>
+										</l>
+									</block>
+									<script>
+										<custom-block s="if %b : %cs else: %cs">
+											<block s="reportVariadicEquals">
+												<list>
+													<block var="input"/>
+													<block s="reportBoolean">
+														<l>
+															<bool>true</bool>
+														</l>
+													</block>
+												</list>
+											</block>
+											<script>
+												<block s="write">
+													<l>True</l>
+													<l>12</l>
+												</block>
+											</script>
+											<script>
+												<block s="write">
+													<l>False</l>
+													<l>12</l>
+												</block>
+											</script>
+										</custom-block>
+									</script>
+									<script>
+										<block s="doIfElse">
+											<block s="reportVariadicOr">
+												<list>
+													<block s="reportIsA">
+														<block var="input"/>
+														<l>
+															<option>text</option>
+														</l>
+													</block>
+													<block s="reportIsA">
+														<block var="input"/>
+														<l>
+															<option>number</option>
+														</l>
+													</block>
+												</list>
+											</block>
+											<script>
+												<block s="write">
+													<block var="input"/>
+													<l>12</l>
+												</block>
+											</script>
+											<script>
+												<block s="write">
+													<l>Type Error: invalid input</l>
+													<l>12</l>
+												</block>
+											</script>
+										</block>
+									</script>
+								</custom-block>
+							</script>
+						</block>
+						<block s="setXPosition">
+							<block var="print"/>
+						</block>
+						<block s="doWait">
+							<l>0.3</l>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;list1&apos; .extend( %&apos;list2&apos; )" type="command" category="variables">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%s"/>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="doIfElse">
+							<custom-block s="%b and %b">
+								<block s="reportIsA">
+									<block var="list1"/>
+									<l>
+										<option>list</option>
+									</l>
+								</block>
+								<block s="reportIsA">
+									<block var="list2"/>
+									<l>
+										<option>list</option>
+									</l>
+								</block>
+							</custom-block>
+							<script>
+								<block s="doForEach">
+									<l>item</l>
+									<block var="list2"/>
+									<script>
+										<block s="doAddToList">
+											<block var="item"/>
+											<block var="list1"/>
+										</block>
+									</script>
+								</block>
+							</script>
+							<script>
+								<custom-block s="print ( %s )">
+									<l>TypeError: object is not subscriptable</l>
+									<variables>
+										<variable name="print">
+											<l>0</l>
+										</variable>
+									</variables>
+								</custom-block>
+								<block s="doStopThis">
+									<l>
+										<option>all</option>
+									</l>
+								</block>
+							</script>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;list&apos; .remove( %&apos;item&apos; )" type="command" category="variables">
+					<variables>
+						<list struct="atomic" id="1215">count</list>
+					</variables>
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%s"/>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="doIfElse">
+							<custom-block s="%b and %b">
+								<block s="reportIsA">
+									<block var="list"/>
+									<l>
+										<option>list</option>
+									</l>
+								</block>
+								<block s="reportVariadicOr">
+									<list>
+										<block s="reportIsA">
+											<block var="item"/>
+											<l>
+												<option>number</option>
+											</l>
+										</block>
+										<block s="reportIsA">
+											<block var="item"/>
+											<l>
+												<option>text</option>
+											</l>
+										</block>
+									</list>
+								</block>
+							</custom-block>
+							<script>
+								<block s="doSetVar">
+									<l>count</l>
+									<l>1</l>
+								</block>
+								<custom-block s="for %upvar in %l : %cs">
+									<l>i</l>
+									<block var="list"/>
+									<script>
+										<block s="doIf">
+											<block s="reportVariadicEquals">
+												<list>
+													<block var="i"/>
+													<block var="item"/>
+												</list>
+											</block>
+											<script>
+												<block s="doDeleteFromList">
+													<block var="count"/>
+													<block var="list"/>
+												</block>
+												<block s="doStopThis">
+													<l>
+														<option>this block</option>
+													</l>
+												</block>
+											</script>
+											<list/>
+										</block>
+										<block s="doSetVar">
+											<l>count</l>
+											<block s="reportVariadicSum">
+												<list>
+													<block var="count"/>
+													<l>1</l>
+												</list>
+											</block>
+										</block>
+									</script>
+									<variables>
+										<variable name="index">
+											<l>3</l>
+										</variable>
+									</variables>
+								</custom-block>
+							</script>
+							<script>
+								<custom-block s="print ( %s )">
+									<l>TypeError: object is not subscriptable</l>
+									<variables>
+										<variable name="print">
+											<l>0</l>
+										</variable>
+									</variables>
+								</custom-block>
+								<block s="doStopThis">
+									<l>
+										<option>all</option>
+									</l>
+								</block>
+							</script>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;list&apos; .pop( %&apos;index&apos; )" type="command" category="variables">
+					<variables>
+						<list struct="atomic" id="1277">realIndex</list>
+					</variables>
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%s"/>
+						<input type="%n"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>realIndex</l>
+							<block s="reportVariadicSum">
+								<list>
+									<block var="index"/>
+									<l>1</l>
+								</list>
+							</block>
+						</block>
+						<block s="doIf">
+							<custom-block s="%b and %b">
+								<block s="reportIsA">
+									<block var="list"/>
+									<l>
+										<option>list</option>
+									</l>
+								</block>
+								<block s="reportIsA">
+									<block var="index"/>
+									<l>
+										<option>number</option>
+									</l>
+								</block>
+							</custom-block>
+							<script>
+								<block s="doIfElse">
+									<custom-block s="%b and %b">
+										<custom-block s="%n &lt; %n">
+											<block var="index"/>
+											<custom-block s="len( %s )">
+												<block var="list"/>
+											</custom-block>
+										</custom-block>
+										<custom-block s="%n &gt;= %n">
+											<block var="index"/>
+											<l>0</l>
+										</custom-block>
+									</custom-block>
+									<script>
+										<block s="doDeleteFromList">
+											<block var="realIndex"/>
+											<block var="list"/>
+										</block>
+									</script>
+									<script>
+										<custom-block s="print ( %s )">
+											<l>TypeError: list index out of range</l>
+											<variables>
+												<variable name="print">
+													<l>-200</l>
+												</variable>
+											</variables>
+										</custom-block>
+										<block s="doStopThis">
+											<l>
+												<option>all</option>
+											</l>
+										</block>
+									</script>
+								</block>
+							</script>
+							<list>
+								<custom-block s="%b and %b">
+									<block s="reportIsA">
+										<block var="list"/>
+										<l>
+											<option>list</option>
+										</l>
+									</block>
+									<block s="reportVariadicEquals">
+										<list>
+											<block var="index"/>
+											<l/>
+										</list>
+									</block>
+								</custom-block>
+								<script>
+									<block s="doDeleteFromList">
+										<l>
+											<option>last</option>
+										</l>
+										<block var="list"/>
+									</block>
+								</script>
+								<l>
+									<bool>true</bool>
+								</l>
+								<script>
+									<custom-block s="print ( %s )">
+										<l>TypeError: object is not subscriptable</l>
+										<variables>
+											<variable name="print">
+												<l>0</l>
+											</variable>
+										</variables>
+									</custom-block>
+									<block s="doStopThis">
+										<l>
+											<option>all</option>
+										</l>
+									</block>
+								</script>
+							</list>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;list&apos; .clear()" type="command" category="variables">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>list</l>
+							<l/>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="def %&apos;my_function&apos; (): %&apos;run1&apos;" type="command" category="control">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%upvar"/>
+						<input type="%cs"/>
+					</inputs>
+					<script>
+						<block s="doRun">
+							<block var="run1"/>
+							<list/>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="def %&apos;my_function&apos; ( %&apos;arg1&apos; ): %&apos;run&apos;" type="command" category="control">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%upvar"/>
+						<input type="%s"/>
+						<input type="%cs"/>
+					</inputs>
+					<script>
+						<block s="doRun">
+							<block var="run"/>
+							<list/>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="def %&apos;my_function&apos; ( %&apos;arg1&apos; , %&apos;arg2&apos; ): %&apos;run&apos;" type="command" category="control">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%upvar"/>
+						<input type="%s"/>
+						<input type="%s"/>
+						<input type="%cs"/>
+					</inputs>
+					<script>
+						<block s="doRun">
+							<block var="run"/>
+							<list/>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="def %&apos;my_function&apos; ( %&apos;arg1&apos; , %&apos;arg2&apos; , %&apos;arg3&apos; ): %&apos;run&apos;" type="command" category="control">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%upvar"/>
+						<input type="%s"/>
+						<input type="%s"/>
+						<input type="%s"/>
+						<input type="%cs"/>
+					</inputs>
+					<script>
+						<block s="doRun">
+							<block var="run"/>
+							<list/>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="return %&apos;input&apos;" type="command" category="control">
+					<variables>
+						<list struct="atomic" id="1380">print</list>
+					</variables>
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="changeYPosition">
+							<l>-20</l>
+						</block>
+						<block s="doSetVar">
+							<l>print</l>
+							<block s="xPosition"/>
+						</block>
+						<block s="doIfElse">
+							<block s="reportIsA">
+								<block var="input"/>
+								<l>
+									<option>list</option>
+								</l>
+							</block>
+							<script>
+								<block s="doForEach">
+									<l>item</l>
+									<block var="input"/>
+									<script>
+										<block s="write">
+											<block var="item"/>
+											<l>12</l>
+										</block>
+										<block s="setXPosition">
+											<block var="print"/>
+										</block>
+										<block s="doWait">
+											<l>0.3</l>
+										</block>
+										<block s="changeYPosition">
+											<l>-20</l>
+										</block>
+									</script>
+								</block>
+							</script>
+							<script>
+								<custom-block s="if %b : %cs else: %cs">
+									<block s="reportIsA">
+										<block var="input"/>
+										<l>
+											<option>Boolean</option>
+										</l>
+									</block>
+									<script>
+										<custom-block s="if %b : %cs else: %cs">
+											<block s="reportVariadicEquals">
+												<list>
+													<block var="input"/>
+													<block s="reportBoolean">
+														<l>
+															<bool>true</bool>
+														</l>
+													</block>
+												</list>
+											</block>
+											<script>
+												<block s="write">
+													<l>True</l>
+													<l>12</l>
+												</block>
+											</script>
+											<script>
+												<block s="write">
+													<l>False</l>
+													<l>12</l>
+												</block>
+											</script>
+										</custom-block>
+									</script>
+									<script>
+										<block s="doIfElse">
+											<block s="reportVariadicOr">
+												<list>
+													<block s="reportIsA">
+														<block var="input"/>
+														<l>
+															<option>text</option>
+														</l>
+													</block>
+													<block s="reportIsA">
+														<block var="input"/>
+														<l>
+															<option>number</option>
+														</l>
+													</block>
+												</list>
+											</block>
+											<script>
+												<block s="write">
+													<block var="input"/>
+													<l>12</l>
+												</block>
+											</script>
+											<script>
+												<block s="write">
+													<l>Type Error: invalid input</l>
+													<l>12</l>
+												</block>
+												<block s="doStopThis">
+													<l>
+														<option>all</option>
+													</l>
+												</block>
+											</script>
+										</block>
+									</script>
+								</custom-block>
+							</script>
+						</block>
+						<block s="setXPosition">
+							<block var="print"/>
+						</block>
+						<block s="doWait">
+							<l>0.3</l>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="# %&apos;comment&apos;" type="command" category="sensing">
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%txt"/>
+					</inputs>
+				</block-definition>
+				<block-definition s="range( %&apos;start&apos; , %&apos;stop&apos; )" type="reporter" category="variables">
+					<variables>
+						<list struct="atomic" id="1470">result,current</list>
+					</variables>
+					<header/>
+					<code>range(&lt;#1&gt;)</code>
+					<translations/>
+					<inputs>
+						<input type="%n"/>
+						<input type="%n"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>result</l>
+							<block s="reportNewList">
+								<list/>
+							</block>
+						</block>
+						<block s="doSetVar">
+							<l>current</l>
+							<block var="start"/>
+						</block>
+						<custom-block s="while %predRing : %cs">
+							<block s="reifyPredicate">
+								<autolambda>
+									<custom-block s="%n &lt;= %n">
+										<block var="current"/>
+										<block var="stop"/>
+									</custom-block>
+								</autolambda>
+								<list/>
+							</block>
+							<script>
+								<block s="doAddToList">
+									<block var="current"/>
+									<block var="result"/>
+								</block>
+								<block s="doChangeVar">
+									<l>current</l>
+									<l>1</l>
+								</block>
+							</script>
+						</custom-block>
+						<block s="doReport">
+							<block var="result"/>
+						</block>
+					</script>
+				</block-definition>
+				<block-definition s="%&apos;list&apos; sort()" type="command" category="variables">
+					<variables>
+						<list struct="atomic" id="1502">n,i,j,key</list>
+					</variables>
+					<header/>
+					<code/>
+					<translations/>
+					<inputs>
+						<input type="%s"/>
+					</inputs>
+					<script>
+						<block s="doSetVar">
+							<l>n</l>
+							<block s="reportListAttribute">
+								<l>
+									<option>length</option>
+								</l>
+								<block var="list"/>
+							</block>
+						</block>
+						<custom-block s="for %upvar in %l : %cs">
+							<l>i</l>
+							<custom-block s="range( %n , %n )">
+								<l>1</l>
+								<block var="n"/>
+								<variables>
+									<variable name="result">
+										<list struct="atomic" id="1516">1,2,3,4,5,6</list>
+									</variable>
+									<variable name="current">
+										<l>7</l>
+									</variable>
+								</variables>
+							</custom-block>
+							<script>
+								<block s="doSetVar">
+									<l>key</l>
+									<block s="reportListItem">
+										<block var="i"/>
+										<block var="list"/>
+									</block>
+								</block>
+								<block s="doSetVar">
+									<l>j</l>
+									<block s="reportDifference">
+										<block var="i"/>
+										<l>1</l>
+									</block>
+								</block>
+								<custom-block s="while %predRing : %cs">
+									<block s="reifyPredicate">
+										<autolambda>
+											<block s="reportVariadicAnd">
+												<list>
+													<custom-block s="%n &gt;= %n">
+														<block var="j"/>
+														<l>0</l>
+													</custom-block>
+													<block s="reportVariadicLessThan">
+														<list>
+															<block var="key"/>
+															<block s="reportListItem">
+																<block var="j"/>
+																<block var="list"/>
+															</block>
+														</list>
+													</block>
+												</list>
+											</block>
+										</autolambda>
+										<list/>
+									</block>
+									<script>
+										<block s="doReplaceInList">
+											<block s="reportVariadicSum">
+												<list>
+													<block var="j"/>
+													<l>1</l>
+												</list>
+											</block>
+											<block var="list"/>
+											<block s="reportListItem">
+												<block var="j"/>
+												<block var="list"/>
+											</block>
+										</block>
+										<block s="doSetVar">
+											<l>j</l>
+											<block s="reportDifference">
+												<block var="j"/>
+												<l>1</l>
+											</block>
+										</block>
+										<block s="doReplaceInList">
+											<block s="reportVariadicSum">
+												<list>
+													<block var="j"/>
+													<l>1</l>
+												</list>
+											</block>
+											<block var="list"/>
+											<block var="key"/>
+										</block>
+									</script>
+								</custom-block>
+							</script>
+							<variables>
+								<variable name="index">
+									<l>7</l>
+								</variable>
+							</variables>
+						</custom-block>
+						<block s="doReport">
+							<block var="list"/>
+						</block>
+					</script>
+				</block-definition>
+			</blocks>
+			<stage name="Stage" width="480" height="360" costume="0" color="255,255,255,1" tempo="60" threadsafe="false" penlog="false" volume="100" pan="0" lines="round" ternary="false" hyperops="true" codify="false" inheritance="true" sublistIDs="false" id="1585">
+				<pentrails>data:image/png;base64,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</pentrails>
+				<costumes>
+					<list struct="atomic" id="1586"/>
+				</costumes>
+				<sounds>
+					<list struct="atomic" id="1587"/>
+				</sounds>
+				<variables/>
+				<blocks/>
+				<scripts/>
+				<sprites select="1">
+					<sprite name="Sprite" idx="1" x="-200" y="100" heading="90" scale="0.3" volume="100" pan="0" rotation="1" draggable="true" costume="0" color="0,0,0,1" pen="tip" id="1592">
+						<costumes>
+							<list struct="atomic" id="1593"/>
+						</costumes>
+						<sounds>
+							<list struct="atomic" id="1594"/>
+						</sounds>
+						<blocks/>
+						<variables/>
+						<scripts>
+							<script x="12" y="117.33333333333258">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>3</l>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<block var="x"/>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+									</script>
+									<comment w="109" collapsed="false">Set Var and Print</comment>
+								</custom-block>
+							</script>
+							<script x="10" y="216.83333333333394">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>3</l>
+										</custom-block>
+										<custom-block s="if %b : %cs">
+											<custom-block s="%s is %s">
+												<block var="x"/>
+												<l>3</l>
+											</custom-block>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>Hello World!</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+										</custom-block>
+									</script>
+									<comment w="90" collapsed="false">If statement</comment>
+								</custom-block>
+							</script>
+							<script x="11" y="353.33333333332894">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>5</l>
+										</custom-block>
+										<custom-block s="%upvar = %s">
+											<l>y</l>
+											<l>6</l>
+										</custom-block>
+										<custom-block s="if %b : %cs else: %cs">
+											<custom-block s="%n &gt; %n">
+												<block var="x"/>
+												<block var="y"/>
+											</custom-block>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>True</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>false</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+										</custom-block>
+									</script>
+									<comment w="90" collapsed="false">If &amp; else statement</comment>
+								</custom-block>
+							</script>
+							<script x="11.999999999999545" y="582.333333333333">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="for %upvar in %l : %cs">
+											<l>i</l>
+											<custom-block s="range( %n )">
+												<l>3</l>
+												<variables>
+													<variable name="result">
+														<l>0</l>
+													</variable>
+													<variable name="count">
+														<l>0</l>
+													</variable>
+												</variables>
+											</custom-block>
+											<script>
+												<custom-block s="print ( %s )">
+													<block var="i"/>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+											<variables>
+												<variable name="index">
+													<l>7</l>
+												</variable>
+											</variables>
+										</custom-block>
+									</script>
+									<comment w="90" collapsed="false">For loop by range()</comment>
+								</custom-block>
+							</script>
+							<script x="13.999999999999545" y="695.3333333333348">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>i</l>
+											<l>0</l>
+										</custom-block>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>5</l>
+										</custom-block>
+										<custom-block s="while %predRing : %cs">
+											<block s="reifyPredicate">
+												<autolambda>
+													<custom-block s="%n &lt;= %n">
+														<block var="i"/>
+														<block var="x"/>
+													</custom-block>
+												</autolambda>
+												<list/>
+											</block>
+											<script>
+												<custom-block s="print ( %s )">
+													<block var="i"/>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+												<custom-block s="%upvar = %s">
+													<l>i</l>
+													<custom-block s="%n + %n">
+														<block var="i"/>
+														<l>1</l>
+													</custom-block>
+												</custom-block>
+											</script>
+										</custom-block>
+									</script>
+									<comment w="90" collapsed="false">While loop</comment>
+								</custom-block>
+							</script>
+							<script x="17" y="901.833333333333">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar , %upvar = [ %s , %s ]">
+											<l>x</l>
+											<l>y</l>
+											<l>Apple</l>
+											<l>Banana</l>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<block var="x"/>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<block var="y"/>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+									</script>
+									<comment w="186" collapsed="false">assign double variables:&#xD;&#xD;x, y, = &quot;Apple&quot;, &quot;Banana&quot;</comment>
+								</custom-block>
+							</script>
+							<script x="21" y="1040.833333333333">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar , %upvar , %upvar = [ %s , %s , %s ]">
+											<l>x</l>
+											<l>y</l>
+											<l>z</l>
+											<l>Apple</l>
+											<l>Banana</l>
+											<l>Orange</l>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<block var="x"/>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<block var="y"/>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<block var="z"/>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+									</script>
+									<comment w="186" collapsed="false">assign multiple variables:&#xD;&#xD;x, y, z = &quot;Apple&quot;, &quot;Banana&quot;, &quot;Orange&quot;</comment>
+								</custom-block>
+							</script>
+							<script x="20" y="1202.833333333333">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = [ %s , %s , %s , %s , %s , %s ]">
+											<l>x</l>
+											<l>Apple</l>
+											<l>Banana</l>
+											<l>Cherry</l>
+											<l>Orange</l>
+											<l>Grape</l>
+											<l>Lemon</l>
+										</custom-block>
+										<custom-block s="for %upvar in %l : %cs">
+											<l>i</l>
+											<block var="x"/>
+											<script>
+												<custom-block s="print ( %s )">
+													<block var="i"/>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+											<variables>
+												<variable name="index">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+									</script>
+									<comment w="158" collapsed="false">Data type: List&#xD;&#xD;The list is changeable, meaning that we can change, add, and remove items in a list after it has been created. and it allows Duplicate values.</comment>
+								</custom-block>
+							</script>
+							<script x="21" y="1366.166666666666">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = [ %s , %s , %s , %s , %s , %s ]">
+											<l>x</l>
+											<l>Apple</l>
+											<l>Banana</l>
+											<l>Cherry</l>
+											<l>Orange</l>
+											<l>Grape</l>
+											<l>Lemon</l>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<l>--- original list---</l>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+										<custom-block s="for %upvar in %l : %cs">
+											<l>i</l>
+											<block var="x"/>
+											<script>
+												<custom-block s="print ( %s )">
+													<block var="i"/>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+											<variables>
+												<variable name="index">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<l>--- new list---</l>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+										<custom-block s="%upvar = [ ]">
+											<l>x</l>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<block var="x"/>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+									</script>
+									<comment w="158" collapsed="false">Empty List</comment>
+								</custom-block>
+							</script>
+							<script x="23" y="1613.5">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = [ %s , %s , %s , %s , %s , %s ]">
+											<l>x</l>
+											<l>Apple</l>
+											<l>Banana</l>
+											<l>Cherry</l>
+											<l>Orange</l>
+											<l>Grape</l>
+											<l>Lemon</l>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<custom-block s="len( %s )">
+												<block var="x"/>
+											</custom-block>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+										<custom-block s="%upvar = [ %s , %s , %s ]">
+											<l>y</l>
+											<l>Cat</l>
+											<l>Dog</l>
+											<l>Fish</l>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<custom-block s="len( %s )">
+												<block var="y"/>
+											</custom-block>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+									</script>
+									<comment w="158" collapsed="false">List Length</comment>
+								</custom-block>
+							</script>
+							<script x="22" y="1799.5">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = [ %s , %s , %s , %s , %s , %s ]">
+											<l>x</l>
+											<l>Apple</l>
+											<l>Banana</l>
+											<l>Cherry</l>
+											<l>Orange</l>
+											<l>Grape</l>
+											<l>Lemon</l>
+										</custom-block>
+										<custom-block s="%s .append( %s )">
+											<block var="x"/>
+											<l>Kiwi</l>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<block var="x"/>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+									</script>
+									<comment w="158" collapsed="false"> Append item in list</comment>
+								</custom-block>
+							</script>
+							<script x="22" y="1936.5">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = [ %s , %s , %s , %s , %s , %s ]">
+											<l>x</l>
+											<l>Apple</l>
+											<l>Banana</l>
+											<l>Cherry</l>
+											<l>Orange</l>
+											<l>Grape</l>
+											<l>Lemon</l>
+										</custom-block>
+										<custom-block s="%s .insert( %n , %s )">
+											<block var="x"/>
+											<l>3</l>
+											<l>Kiwi</l>
+											<variables>
+												<variable name="realIndex">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<block var="x"/>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+									</script>
+									<comment w="182" collapsed="false"> Insert item in list by specified index</comment>
+								</custom-block>
+							</script>
+							<script x="25" y="2067.833333333333">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = [ %s , %s , %s , %s , %s , %s ]">
+											<l>x</l>
+											<l>Apple</l>
+											<l>Banana</l>
+											<l>Cherry</l>
+											<l>Orange</l>
+											<l>Grape</l>
+											<l>Lemon</l>
+										</custom-block>
+										<custom-block s="%upvar = [ %s , %s , %s ]">
+											<l>y</l>
+											<l>Kiwi</l>
+											<l>pineapple</l>
+											<l>papaya</l>
+										</custom-block>
+										<custom-block s="%s .extend( %s )">
+											<block var="x"/>
+											<block var="y"/>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<block var="x"/>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+									</script>
+									<comment w="182" collapsed="false">Extend List&#xD;&#xD;To append elements from another list to the current list</comment>
+								</custom-block>
+							</script>
+							<script x="27" y="2223.833333333333">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = [ %s , %s , %s , %s , %s , %s ]">
+											<l>x</l>
+											<l>Apple</l>
+											<l>Banana</l>
+											<l>Cherry</l>
+											<l>Orange</l>
+											<l>Grape</l>
+											<l>Lemon</l>
+										</custom-block>
+										<custom-block s="%s .remove( %s )">
+											<block var="x"/>
+											<l>Cherry</l>
+											<variables>
+												<variable name="count">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<block var="x"/>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+									</script>
+									<comment w="182" collapsed="false">Remove specified item from List by given value</comment>
+								</custom-block>
+							</script>
+							<script x="27" y="2355.833333333333">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = [ %s , %s , %s , %s , %s , %s ]">
+											<l>x</l>
+											<l>Apple</l>
+											<l>Banana</l>
+											<l>Cherry</l>
+											<l>Orange</l>
+											<l>Grape</l>
+											<l>Lemon</l>
+										</custom-block>
+										<custom-block s="%s .pop( %n )">
+											<block var="x"/>
+											<l>2</l>
+											<variables>
+												<variable name="realIndex">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<block var="x"/>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+									</script>
+									<comment w="182" collapsed="false">Delete specified item from List by index &#xD;&#xD;If no specify the index, it will removes the last item.</comment>
+								</custom-block>
+							</script>
+							<script x="29" y="2492.833333333333">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = [ %s , %s , %s , %s , %s , %s ]">
+											<l>x</l>
+											<l>Apple</l>
+											<l>Banana</l>
+											<l>Cherry</l>
+											<l>Orange</l>
+											<l>Grape</l>
+											<l>Lemon</l>
+										</custom-block>
+										<custom-block s="%upvar = %s">
+											<l>y</l>
+											<custom-block s="%s [ %n ]">
+												<block var="x"/>
+												<l>4</l>
+												<variables>
+													<variable name="count">
+														<l>0</l>
+													</variable>
+												</variables>
+											</custom-block>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<block var="y"/>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+									</script>
+									<comment w="158" collapsed="false">Return List Item by index</comment>
+								</custom-block>
+							</script>
+							<script x="32" y="2638.6666666666665">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = [ %s , %s , %s , %s , %s , %s ]">
+											<l>x</l>
+											<l>Apple</l>
+											<l>Banana</l>
+											<l>Cherry</l>
+											<l>Orange</l>
+											<l>Grape</l>
+											<l>Lemon</l>
+										</custom-block>
+										<custom-block s="%s [ %n ] = %s">
+											<block var="x"/>
+											<l>3</l>
+											<l>Kiwi</l>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<block var="x"/>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+									</script>
+									<comment w="158" collapsed="false">Replace item in List by index</comment>
+								</custom-block>
+							</script>
+							<script x="601.3333333333335" y="1711.1666666666615">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>5</l>
+										</custom-block>
+										<custom-block s="%upvar = %s">
+											<l>y</l>
+											<l>4</l>
+										</custom-block>
+										<block s="doIfElse">
+											<custom-block s="%n &gt;= %n">
+												<block var="x"/>
+												<block var="y"/>
+											</custom-block>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>True</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>False</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+										</block>
+									</script>
+									<comment w="163" collapsed="false">Comparision Operator: Greater than or equal to</comment>
+								</custom-block>
+							</script>
+							<script x="602" y="1926.1666666666652">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>4</l>
+										</custom-block>
+										<custom-block s="%upvar = %s">
+											<l>y</l>
+											<l>5</l>
+										</custom-block>
+										<custom-block s="if %b : %cs else: %cs">
+											<custom-block s="%n &lt;= %n">
+												<block var="x"/>
+												<block var="y"/>
+											</custom-block>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>True</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>False</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+										</custom-block>
+									</script>
+									<comment w="163" collapsed="false">Comparision Operator: Less than or equal to</comment>
+								</custom-block>
+							</script>
+							<script x="602" y="1502.4999999999982">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>4</l>
+										</custom-block>
+										<custom-block s="%upvar = %s">
+											<l>y</l>
+											<l>5</l>
+										</custom-block>
+										<block s="doIfElse">
+											<custom-block s="%n &lt; %n">
+												<block var="x"/>
+												<block var="y"/>
+											</custom-block>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>True</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>False</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+										</block>
+									</script>
+									<comment w="163" collapsed="false">Comparision Operator: Less than</comment>
+								</custom-block>
+							</script>
+							<script x="603" y="1295.4999999999982">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>5</l>
+										</custom-block>
+										<custom-block s="%upvar = %s">
+											<l>y</l>
+											<l>4</l>
+										</custom-block>
+										<block s="doIfElse">
+											<custom-block s="%n &gt; %n">
+												<block var="x"/>
+												<block var="y"/>
+											</custom-block>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>True</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>False</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+										</block>
+									</script>
+									<comment w="163" collapsed="false">Comparision Operator: Greater than</comment>
+								</custom-block>
+							</script>
+							<script x="603.3333333333335" y="1085.1666666666656">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>5</l>
+										</custom-block>
+										<custom-block s="%upvar = %s">
+											<l>y</l>
+											<l>5</l>
+										</custom-block>
+										<block s="doIfElse">
+											<custom-block s="%n != %n">
+												<block var="x"/>
+												<block var="y"/>
+											</custom-block>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>True</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>False</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+										</block>
+									</script>
+									<comment w="163" collapsed="false">Comparision Operator: Not Equal</comment>
+								</custom-block>
+							</script>
+							<script x="603" y="875.4999999999982">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>5</l>
+										</custom-block>
+										<custom-block s="%upvar = %s">
+											<l>y</l>
+											<l>5</l>
+										</custom-block>
+										<custom-block s="if %b : %cs else: %cs">
+											<custom-block s="%n == %n">
+												<block var="x"/>
+												<block var="y"/>
+												<variables>
+													<variable name="c">
+														<l>0</l>
+													</variable>
+												</variables>
+											</custom-block>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>True</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>False</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+										</custom-block>
+									</script>
+									<comment w="163" collapsed="false">Comparision Operator: Equal</comment>
+								</custom-block>
+							</script>
+							<script x="605" y="731.8333333333289">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>2</l>
+										</custom-block>
+										<custom-block s="%upvar = %s">
+											<l>y</l>
+											<l>5</l>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<custom-block s="%n ** %n">
+												<block var="x"/>
+												<block var="y"/>
+												<variables>
+													<variable name="c">
+														<l>0</l>
+													</variable>
+												</variables>
+											</custom-block>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+									</script>
+									<comment w="163" collapsed="false">Arithmetic Operator: Exponentiation&#xD;x = 2&#xD;y = 5&#xD;x ** y = 2 * 2 * 2 * 2 * 2</comment>
+								</custom-block>
+							</script>
+							<script x="601.3333333333333" y="589.4999999999995">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>10</l>
+										</custom-block>
+										<custom-block s="%upvar = %s">
+											<l>y</l>
+											<l>2</l>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<custom-block s="%n % %n">
+												<block var="x"/>
+												<block var="y"/>
+											</custom-block>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+									</script>
+									<comment w="164" collapsed="false">Arithmetic Operator: Modulus&#xD;x = 10&#xD;y = 2&#xD;x % y = 0.</comment>
+								</custom-block>
+							</script>
+							<script x="603" y="449.83333333333303">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>5</l>
+										</custom-block>
+										<custom-block s="%upvar = %s">
+											<l>y</l>
+											<l>2</l>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<block s="reportQuotient">
+												<block var="x"/>
+												<block var="y"/>
+											</block>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+									</script>
+									<comment w="158" collapsed="false">Arithmetic Operator: Division</comment>
+								</custom-block>
+							</script>
+							<script x="602" y="311.83333333333303">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>5</l>
+										</custom-block>
+										<custom-block s="%upvar = %s">
+											<l>y</l>
+											<l>2</l>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<custom-block s="%n * %n">
+												<block var="x"/>
+												<block var="y"/>
+											</custom-block>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+									</script>
+									<comment w="158" collapsed="false">Arithmetic Operator: Multiplication</comment>
+								</custom-block>
+							</script>
+							<script x="599" y="178.83333333333303">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>5</l>
+										</custom-block>
+										<custom-block s="%upvar = %s">
+											<l>y</l>
+											<l>2</l>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<custom-block s="%n - %n">
+												<block var="x"/>
+												<block var="y"/>
+											</custom-block>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+									</script>
+									<comment w="158" collapsed="false">Arithmetic Operator: Subtraction</comment>
+								</custom-block>
+							</script>
+							<script x="601" y="45.5">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>5</l>
+										</custom-block>
+										<custom-block s="%upvar = %s">
+											<l>y</l>
+											<l>2</l>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<custom-block s="%n + %n">
+												<block var="x"/>
+												<block var="y"/>
+											</custom-block>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+									</script>
+									<comment w="158" collapsed="false">Arithmetic Operator: Addition </comment>
+								</custom-block>
+							</script>
+							<script x="954" y="44.33333333333212">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>6</l>
+										</custom-block>
+										<custom-block s="if %b : %cs else: %cs">
+											<custom-block s="%b and %b">
+												<custom-block s="%n &lt; %n">
+													<block var="x"/>
+													<l>10</l>
+												</custom-block>
+												<custom-block s="%n &gt; %n">
+													<block var="x"/>
+													<l>5</l>
+												</custom-block>
+											</custom-block>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>True</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>False</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+										</custom-block>
+									</script>
+									<comment w="158" collapsed="false">Logical Operator: and </comment>
+								</custom-block>
+							</script>
+							<script x="957" y="233.4999999999991">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>6</l>
+										</custom-block>
+										<custom-block s="if %b : %cs else: %cs">
+											<custom-block s="%b or %b">
+												<custom-block s="%n == %n">
+													<block var="x"/>
+													<l>6</l>
+													<variables>
+														<variable name="c">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+												<custom-block s="%n == %n">
+													<block var="x"/>
+													<l>7</l>
+													<variables>
+														<variable name="c">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</custom-block>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>True</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>False</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+										</custom-block>
+									</script>
+									<comment w="158" collapsed="false">Logical Operator: or</comment>
+								</custom-block>
+							</script>
+							<script x="954.3333333333337" y="425.499999999995">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>1</l>
+										</custom-block>
+										<custom-block s="%upvar = %s">
+											<l>y</l>
+											<l>2</l>
+										</custom-block>
+										<block s="doIfElse">
+											<custom-block s="not ( %b )">
+												<block s="reportVariadicEquals">
+													<list>
+														<block s="reportVariadicSum">
+															<list>
+																<block var="x"/>
+																<block var="y"/>
+															</list>
+														</block>
+														<l>3</l>
+													</list>
+												</block>
+											</custom-block>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>True</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>False</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+										</block>
+									</script>
+									<comment w="158" collapsed="false">Logical Operator: not</comment>
+								</custom-block>
+							</script>
+							<script x="949.6666666666667" y="853.1666666666633">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>"apple"</l>
+										</custom-block>
+										<custom-block s="%upvar = %s">
+											<l>y</l>
+											<l>"apple"</l>
+										</custom-block>
+										<block s="doIfElse">
+											<custom-block s="%s is not %s">
+												<block var="x"/>
+												<block var="y"/>
+											</custom-block>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>True</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>False</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+										</block>
+									</script>
+									<comment w="158" collapsed="false">Identity Operator: is not</comment>
+								</custom-block>
+							</script>
+							<script x="1324" y="37.49999999999818">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>"str"</l>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<custom-block s="int( %s )">
+												<block var="x"/>
+											</custom-block>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+									</script>
+									<comment w="149" collapsed="false">The int() function is to confirm the input value is an integer number, otherwise an error will be returned.</comment>
+								</custom-block>
+							</script>
+							<script x="1324" y="163.1666666666647">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>4</l>
+										</custom-block>
+										<custom-block s="%upvar = %s">
+											<l>y</l>
+											<l>3</l>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<custom-block s="pow ( %n , %n">
+												<block var="x"/>
+												<block var="y"/>
+												<variables>
+													<variable name="result">
+														<l>0</l>
+													</variable>
+												</variables>
+											</custom-block>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+									</script>
+									<comment w="298" collapsed="false">The pow() function returns the value of x to the power of y (xy).&#xD;x as the base&#xD;y as the exponet&#xD;x = 4&#xD;y = 3&#xD;pow(x,y) is 64&#xD;Return the value of 4 to the power of 3 &#xD;(same as 4 * 4 * 4)</comment>
+								</custom-block>
+							</script>
+							<script x="1319" y="335.83333333333303">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>4</l>
+										</custom-block>
+										<custom-block s="%upvar = %s">
+											<l>y</l>
+											<l>3</l>
+										</custom-block>
+										<custom-block s="%upvar = %s">
+											<l>z</l>
+											<l>5</l>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<custom-block s="pow ( %n , %n , %n )">
+												<block var="x"/>
+												<block var="y"/>
+												<block var="z"/>
+												<variables>
+													<variable name="result">
+														<l>0</l>
+													</variable>
+												</variables>
+											</custom-block>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+									</script>
+									<comment w="298" collapsed="false">The pow() function returns the value of x to the power of y (x % y).&#xD;x as the base&#xD;y as the exponet&#xD;z as the modulus&#xD;x = 4&#xD;y = 3&#xD;z = 5&#xD;pow(x,y,z) is 4&#xD;Return the value of 4 to the power of 3, modulus 5&#xD;(same as (4 * 4 * 4) % 5)</comment>
+								</custom-block>
+							</script>
+							<script x="1325.6666666666665" y="539.8333333333303">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = [ %s , %s , %s , %s , %s , %s ]">
+											<l>x</l>
+											<l>Apple</l>
+											<l>Banana</l>
+											<l>Cherry</l>
+											<l>Orange</l>
+											<l>Grape</l>
+											<l>Lemon</l>
+										</custom-block>
+										<block s="doIfElse">
+											<custom-block s="%s in %l">
+												<l>Orange</l>
+												<block var="x"/>
+												<variables>
+													<variable name="predicate">
+														<l>0</l>
+													</variable>
+												</variables>
+											</custom-block>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>True</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>False</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+										</block>
+									</script>
+									<comment w="158" collapsed="false">Membership Operator: in&#xD;&#xD;Returns True if a sequence with the specified value is present in the object</comment>
+								</custom-block>
+							</script>
+							<script x="1325" y="737.8333333333317">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = [ %s , %s , %s , %s , %s , %s ]">
+											<l>x</l>
+											<l>Apple</l>
+											<l>Banana</l>
+											<l>Cherry</l>
+											<l>Orange</l>
+											<l>Grape</l>
+											<l>Lemon</l>
+										</custom-block>
+										<block s="doIfElse">
+											<custom-block s="%s not in %l">
+												<l>Orange</l>
+												<block var="x"/>
+												<variables>
+													<variable name="predicate">
+														<l>0</l>
+													</variable>
+												</variables>
+											</custom-block>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>True</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>False</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+										</block>
+									</script>
+									<comment w="158" collapsed="false">Membership Operator: not in&#xD;&#xD;Returns True if a sequence with the specified value is not present in the object</comment>
+								</custom-block>
+							</script>
+							<script x="2005" y="198.83333333333303">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>n</l>
+											<l>5</l>
+										</custom-block>
+										<custom-block s="def %upvar ( %s ): %cs">
+											<l>factorial</l>
+											<block var="n"/>
+											<script>
+												<custom-block s="%upvar = %s">
+													<l>result</l>
+													<l>1</l>
+												</custom-block>
+												<custom-block s="for %upvar in %l : %cs">
+													<l>i</l>
+													<custom-block s="range( %n , %n )">
+														<l>1</l>
+														<block var="n"/>
+														<variables>
+															<variable name="result">
+																<l>0</l>
+															</variable>
+															<variable name="current">
+																<l>0</l>
+															</variable>
+														</variables>
+													</custom-block>
+													<script>
+														<block s="doSetVar">
+															<l>result</l>
+															<custom-block s="%n * %n">
+																<block var="result"/>
+																<block var="i"/>
+															</custom-block>
+														</block>
+														<custom-block s="return %s">
+															<block var="result"/>
+															<variables>
+																<variable name="print">
+																	<l>0</l>
+																</variable>
+															</variables>
+														</custom-block>
+													</script>
+													<variables>
+														<variable name="index">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+										</custom-block>
+									</script>
+									<comment w="300.2958984375" collapsed="false">The factorial of a non-negative integer n is the product of all positive integers less than or equal to n, denoted by n!.&#xD;&#xD;For example, &#xD;5! = 5 x 4 x 3 x 2 x2 = 120</comment>
+								</custom-block>
+							</script>
+							<script x="951" y="643.4999999999964">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>"apple"</l>
+										</custom-block>
+										<custom-block s="%upvar = %s">
+											<l>y</l>
+											<l>"apple"</l>
+										</custom-block>
+										<block s="doIfElse">
+											<custom-block s="%s is %s">
+												<block var="x"/>
+												<block var="y"/>
+											</custom-block>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>True</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>False</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+										</block>
+									</script>
+									<comment w="158" collapsed="false">Identity Operator: is</comment>
+								</custom-block>
+							</script>
+							<script x="31" y="2767.9999999999995">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = [ %s , %s , %s , %s , %s , %s ]">
+											<l>x</l>
+											<l>3</l>
+											<l>98</l>
+											<l>65</l>
+											<l>1</l>
+											<l>15</l>
+											<l>57</l>
+										</custom-block>
+										<custom-block s="%s sort()">
+											<block var="x"/>
+											<variables>
+												<variable name="n">
+													<l>0</l>
+												</variable>
+												<variable name="i">
+													<l>0</l>
+												</variable>
+												<variable name="j">
+													<l>0</l>
+												</variable>
+												<variable name="key">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+										<custom-block s="print ( %s )">
+											<block var="x"/>
+											<variables>
+												<variable name="print">
+													<l>0</l>
+												</variable>
+											</variables>
+										</custom-block>
+									</script>
+									<comment w="158" collapsed="false">Sorts the list ascending</comment>
+								</custom-block>
+							</script>
+							<script x="2018" y="451.5000000000007">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>x</l>
+											<l>3</l>
+										</custom-block>
+										<block s="doIfElse">
+											<custom-block s="%n == %n">
+												<custom-block s="%n % %n">
+													<block var="x"/>
+													<l>2</l>
+												</custom-block>
+												<l>0</l>
+												<variables>
+													<variable name="c">
+														<l>0</l>
+													</variable>
+												</variables>
+											</custom-block>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>Even Number</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+											<script>
+												<custom-block s="print ( %s )">
+													<l>Odd Number</l>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+										</block>
+									</script>
+									<comment w="113" collapsed="false">If a number is evenly divisible by 2 without any remainder, then it is an even number; Otherwise, it is an odd number. The modulo operator % is used to check it in such a way as num%2 == 0 .</comment>
+								</custom-block>
+							</script>
+							<script x="1980" y="21.33333333333303">
+								<custom-block s="run Hybrid Python %cs">
+									<script>
+										<custom-block s="%upvar = %s">
+											<l>n</l>
+											<l>4</l>
+										</custom-block>
+										<custom-block s="def %upvar ( %s ): %cs">
+											<l>find_square</l>
+											<block var="n"/>
+											<script>
+												<custom-block s="%upvar = %s">
+													<l>result</l>
+													<custom-block s="%n * %n">
+														<block var="n"/>
+														<block var="n"/>
+													</custom-block>
+												</custom-block>
+												<custom-block s="return %s">
+													<block var="result"/>
+													<variables>
+														<variable name="print">
+															<l>0</l>
+														</variable>
+													</variables>
+												</custom-block>
+											</script>
+										</custom-block>
+									</script>
+									<comment w="300.2958984375" collapsed="false">Find_square(num):&#xD;&#xD;The function Find_square(num) takes a single argument and returns its square.</comment>
+								</custom-block>
+							</script>
+							<comment x="20.207031250000227" y="10" w="362" collapsed="false">Hybrid Python Project&#xD;★ put &quot;Run&quot; block for main frame (which will reset the stage)&#xD;★ then put put &quot;python code&quot; into &quot;Run&quot; block.&#xD;★ Use mouse click on the &quot;Run&quot; block to run the &quot;python code&quot; you do </comment>
+						</scripts>
+					</sprite>
+					<watcher var="a" style="normal" x="234" y="13.999999999999972" color="243,118,29" hidden="true"/>
+					<watcher var="b" style="normal" x="10.000000000000455" y="10.000000000000014" color="243,118,29" hidden="true"/>
+					<watcher var="c" style="normal" x="10.000000000000455" y="31.000002000000052" color="243,118,29" hidden="true"/>
+					<watcher var="d" style="normal" x="10.000000000000455" y="52.00000399999996" color="243,118,29" hidden="true"/>
+					<watcher var="e" style="normal" x="10.000000000000455" y="73.00000600000004" color="243,118,29" hidden="true"/>
+					<watcher var="x" style="normal" x="10.000000000000455" y="94.00000799999987" color="243,118,29" hidden="true"/>
+					<watcher var="y" style="normal" x="10.000000000000455" y="115.00001" color="243,118,29" hidden="true"/>
+					<watcher var="f" style="normal" x="10.000000000000455" y="136.00001199999994" color="243,118,29" hidden="true"/>
+					<watcher var="g" style="normal" x="10.000000000000455" y="157.00001399999996" color="243,118,29" hidden="true"/>
+					<watcher var="h" style="normal" x="10.000000000000455" y="178.00001599999985" color="243,118,29" hidden="true"/>
+					<watcher var="i" style="normal" x="10.000000000000455" y="199.00001799999995" color="243,118,29" hidden="true"/>
+					<watcher var="j" style="normal" x="10.000000000000455" y="220.0000199999999" color="243,118,29" hidden="true"/>
+					<watcher var="k" style="normal" x="10.000000000000455" y="241.00002200000029" color="243,118,29" hidden="true"/>
+					<watcher var="function" style="normal" x="10.000000000000455" y="262.0000240000001" color="243,118,29" hidden="true"/>
+				</sprites>
+			</stage>
+			<variables>
+				<variable name="a" hidden="true">
+					<l>5</l>
+				</variable>
+				<variable name="b" hidden="true">
+					<l>5</l>
+				</variable>
+				<variable name="c" hidden="true">
+					<l>1</l>
+				</variable>
+				<variable name="d" hidden="true">
+					<l>0</l>
+				</variable>
+				<variable name="e" hidden="true">
+					<l>0</l>
+				</variable>
+				<variable name="x" hidden="true">
+					<l/>
+				</variable>
+				<variable name="y" hidden="true">
+					<l>0</l>
+				</variable>
+				<variable name="z" hidden="true">
+					<l>0</l>
+				</variable>
+				<variable name="f" hidden="true">
+					<l>0</l>
+				</variable>
+				<variable name="g" hidden="true">
+					<l>0</l>
+				</variable>
+				<variable name="h" hidden="true">
+					<l>0</l>
+				</variable>
+				<variable name="i" hidden="true">
+					<l>0</l>
+				</variable>
+				<variable name="j" hidden="true">
+					<l>0</l>
+				</variable>
+				<variable name="k" hidden="true">
+					<l>0</l>
+				</variable>
+				<variable name="function" hidden="true">
+					<l>0</l>
+				</variable>
+			</variables>
+		</scene>
+	</scenes>
+</project>
